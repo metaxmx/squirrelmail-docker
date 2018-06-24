@@ -6,7 +6,7 @@ ENV SQUIRRELMAIL_VERSION 1.4.22
 # install the PHP extensions we need
 RUN apt-get update \
   && apt-get upgrade -y \
-  && apt-get install -y libcurl4-gnutls-dev libpng-dev libssl-dev libc-client2007e-dev libkrb5-dev unzip cron re2c python tree libjpeg-dev libpng12-dev wget \
+  && apt-get install -y libcurl4-gnutls-dev libpng-dev libssl-dev libc-client2007e-dev libkrb5-dev unzip cron re2c python tree libjpeg-dev libpng-dev wget \
   && docker-php-ext-configure imap --with-imap-ssl --with-kerberos \
   && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
   && docker-php-ext-install mysqli curl gd zip mbstring imap iconv \
